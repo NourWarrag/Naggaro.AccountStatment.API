@@ -13,7 +13,7 @@ public class AccountStatmentDto
 {
 }
 
-public class GetTodoItemsWithPaginationQueryValidator : AbstractValidator<GetAccountStatmentnQuery>
+public class GetTodoItemsWithPaginationQueryValidator : AbstractValidator<GetAccountStatmentQuery>
 {
     public GetTodoItemsWithPaginationQueryValidator()
     {
@@ -29,7 +29,7 @@ public class GetTodoItemsWithPaginationQueryValidator : AbstractValidator<GetAcc
 }
 
 
-public class GetAccountStatmentnQuery : IRequest<AccountStatmentDto>
+public class GetAccountStatmentQuery : IRequest<AccountStatmentDto>
 {
     public int AccountId { get; set; }
     public DateTime FromDate  { get; set; }
@@ -38,18 +38,18 @@ public class GetAccountStatmentnQuery : IRequest<AccountStatmentDto>
     public decimal ToAmount { get; set; }
 }
 
-public class GetTodoItemsWithPaginationQueryHandler : IRequestHandler<GetAccountStatmentnQuery, AccountStatmentDto>
+public class GetAccountStatmentnQueryHandler : IRequestHandler<GetAccountStatmentQuery, AccountStatmentDto>
 {
     private readonly IApplicationDbContext _context;
    
 
-    public GetTodoItemsWithPaginationQueryHandler(IApplicationDbContext context )
+    public GetAccountStatmentnQueryHandler(IApplicationDbContext context )
     {
         _context = context;
        
     }
 
-    public async Task<AccountStatmentDto> Handle(GetAccountStatmentnQuery request, CancellationToken cancellationToken)
+    public async Task<AccountStatmentDto> Handle(GetAccountStatmentQuery request, CancellationToken cancellationToken)
     { var result = await _context.Accounts
             .Include(i => i.AccountStatments)
             .Where(x => x.ID == request.AccountId).FirstOrDefaultAsync();

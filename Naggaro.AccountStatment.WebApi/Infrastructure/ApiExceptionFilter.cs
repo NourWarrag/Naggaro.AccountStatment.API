@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Naggaro.AccountStatment.Application.Common.Exceptions;
+using FluentValidation;
 
 namespace Naggaro.AccountStatment.WebApi.Infrastructure;
 
@@ -49,7 +50,8 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
     {
         var exception = (ValidationException)context.Exception;
 
-        var details = new ValidationProblemDetails(exception.Errors);
+        var details = new ValidationProblemDetails(exception.Errors.GroupBy(e => e.PropertyName, e => e.ErrorMessage)
+            .ToDictionary(failureGroup => failureGroup.Key, failureGroup => failureGroup.ToArray()));
       
         context.Result = new BadRequestObjectResult(details);
 

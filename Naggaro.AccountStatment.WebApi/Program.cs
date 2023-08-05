@@ -11,7 +11,6 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        var app = builder.Build();
 
         builder.Services.AddScoped<IUser, CurrentUser>();
 
@@ -21,7 +20,18 @@ public class Program
         builder.Services.AddControllers(options =>
           options.Filters.Add<ApiExceptionFilter>());
 
+
+        var app = builder.Build();
+
+        app.UseRouting();
+
+        app.UseAuthentication();
+
+        app.UseAuthorization();
+
         app.MapGet("/", () => "Hello World!");
+
+        app.MapControllers();
 
         app.Run();
     }
