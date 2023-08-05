@@ -18,6 +18,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
                 { typeof(ValidationException), HandleValidationException },
                 { typeof(UnauthorizedAccessException), HandleUnauthorizedAccessException },
                 { typeof(ForbiddenAccessException), HandleForbiddenAccessException },
+                { typeof(UserAlreadyLogedInException), HandleUserAlreadyLogedInException },
             };
     }
 
@@ -45,6 +46,19 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
 
         HandleUnknownException(context);
     }
+    private void HandleUserAlreadyLogedInException(ExceptionContext context)
+    {
+        var details = new ProblemDetails
+        {
+            Status = StatusCodes.Status400BadRequest,
+            Title = "AlreadyLogedIn",
+            Detail= context.Exception.Message
+        };
+
+        context.Result = new BadRequestObjectResult(details);
+
+        context.ExceptionHandled = true;
+    }
 
     private void HandleValidationException(ExceptionContext context)
     {
@@ -52,7 +66,7 @@ public class ApiExceptionFilter : ExceptionFilterAttribute
 
         var details = new ValidationProblemDetails(exception.Errors.GroupBy(e => e.PropertyName, e => e.ErrorMessage)
             .ToDictionary(failureGroup => failureGroup.Key, failureGroup => failureGroup.ToArray()));
-      
+   
         context.Result = new BadRequestObjectResult(details);
 
         context.ExceptionHandled = true;

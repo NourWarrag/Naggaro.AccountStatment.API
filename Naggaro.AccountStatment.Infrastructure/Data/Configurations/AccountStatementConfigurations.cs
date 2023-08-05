@@ -11,10 +11,12 @@ public class AccountStatementConfigurations : IEntityTypeConfiguration<AccountSt
 
         builder.Property(t => t.Amount)
           .HasConversion<string>()
+          .HasColumnType("Text")
            .IsRequired();
 
         builder.Property(t => t.DateField)
          .HasConversion<string>()
+         .HasColumnType("Text")
           .IsRequired();
 
     }

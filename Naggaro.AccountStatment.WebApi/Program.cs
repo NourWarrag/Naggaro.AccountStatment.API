@@ -1,6 +1,7 @@
 using Naggaro.AccountStatment.Application;
 using Naggaro.AccountStatment.Application.Common.Interfaces;
 using Naggaro.AccountStatment.Infrastructure;
+using Naggaro.AccountStatment.Infrastructure.Data;
 using Naggaro.AccountStatment.WebApi.Infrastructure;
 using Naggaro.AccountStatment.WebApi.Services;
 
@@ -8,7 +9,7 @@ namespace Naggaro.AccountStatment.WebApi;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
@@ -23,12 +24,15 @@ public class Program
 
         var app = builder.Build();
 
+        await app.InitialiseDatabaseAsync();
+
+
         app.UseRouting();
 
         app.UseAuthentication();
 
         app.UseAuthorization();
-
+        app.UseAuthorization();
         app.MapGet("/", () => "Hello World!");
 
         app.MapControllers();

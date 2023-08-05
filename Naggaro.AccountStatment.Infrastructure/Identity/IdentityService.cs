@@ -33,7 +33,7 @@ public class IdentityService : IIdentityService
     public async Task<bool> SignInAsync(string userName, string password)
     {
         var user = await _userManager.Users.FirstAsync(u => u.UserName == userName);
-        var result = await _signInManager.CheckPasswordSignInAsync(user, password, lockoutOnFailure: false);
+        var result = await _signInManager.PasswordSignInAsync(user, password, lockoutOnFailure: false, isPersistent: true);
 
         return result.Succeeded;
 
