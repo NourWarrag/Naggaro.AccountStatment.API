@@ -17,6 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0C11EBD3-5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naggaro.AccountStatment.Application.UnitTest", "Naggaro.AccountStatment.Application.UnitTest\Naggaro.AccountStatment.Application.UnitTest.csproj", "{353E7AD1-7A99-4FE3-B385-051C2AA2EF91}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SonarQube", "SonarQube", "{2FC57402-D646-4016-B489-E174393ACF3D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\sonarqube-10.1.0.73491\data\governance\project_dumps\export\naggaro-accountstatment.zip = ..\..\..\..\..\sonarqube-10.1.0.73491\data\governance\project_dumps\export\naggaro-accountstatment.zip
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
