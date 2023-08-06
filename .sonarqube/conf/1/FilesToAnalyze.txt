@@ -1,0 +1,12 @@
+﻿C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\AccountStatement\GetAccountStatment.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Authentication\AuthenticationRequest.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Authentication\LogoutRequest.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Common\Behaviours\LoggingBehaviour.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Common\Behaviours\ValidationBehaviour.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Common\Exceptions\ForbiddenAccessException.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Common\Exceptions\NotFoundException.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Common\Exceptions\UserAlreadyLogedInException.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Common\Interfaces\IApplicationDbContext.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Common\Interfaces\IIdentityService.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\Common\Interfaces\IUser.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Application\RegisterApplication.cs

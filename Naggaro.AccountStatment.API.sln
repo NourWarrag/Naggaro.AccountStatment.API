@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naggaro.AccountStatment.Web
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0C11EBD3-57D9-4607-882B-BF2BAC26FDF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naggaro.AccountStatment.Application.UnitTest", "Naggaro.AccountStatment.Application.UnitTest\Naggaro.AccountStatment.Application.UnitTest.csproj", "{353E7AD1-7A99-4FE3-B385-051C2AA2EF91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{78CF9E18-2A60-41A4-ACB3-2A0D1361B787}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78CF9E18-2A60-41A4-ACB3-2A0D1361B787}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78CF9E18-2A60-41A4-ACB3-2A0D1361B787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{353E7AD1-7A99-4FE3-B385-051C2AA2EF91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{353E7AD1-7A99-4FE3-B385-051C2AA2EF91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{353E7AD1-7A99-4FE3-B385-051C2AA2EF91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{353E7AD1-7A99-4FE3-B385-051C2AA2EF91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{9665C9CA-1239-4D1F-AFC1-D0F008F9CB10} = {D1642B8C-31EE-4A75-A090-6A2AB60A8853}
 		{42622F0B-AD23-4C86-9167-B6A5371E2772} = {D1642B8C-31EE-4A75-A090-6A2AB60A8853}
 		{78CF9E18-2A60-41A4-ACB3-2A0D1361B787} = {D1642B8C-31EE-4A75-A090-6A2AB60A8853}
+		{353E7AD1-7A99-4FE3-B385-051C2AA2EF91} = {0C11EBD3-57D9-4607-882B-BF2BAC26FDF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4764EE6C-6991-4CC8-80FE-E6DFC65E43EC}

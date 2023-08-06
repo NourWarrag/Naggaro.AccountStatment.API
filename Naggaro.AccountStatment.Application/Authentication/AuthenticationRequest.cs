@@ -28,13 +28,11 @@ public class AuthenticationRequestValidator : AbstractValidator<AuthenticationRe
 
 public class AuthenticationRequesHandler : IRequestHandler<AuthenticationRequest>
 {
-    private readonly IApplicationDbContext _context;
     private readonly IIdentityService _identityService;
     private readonly IUser _CurrentUser;
 
-    public AuthenticationRequesHandler(IApplicationDbContext context, IIdentityService identityService, IUser currentUser)
-    {
-        _context = context;
+    public AuthenticationRequesHandler(IIdentityService identityService, IUser currentUser)
+    { 
         _identityService = identityService;
         _CurrentUser = currentUser;
     }

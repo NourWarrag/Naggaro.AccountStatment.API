@@ -32,7 +32,7 @@ public class Program
         app.UseAuthentication();
 
         app.UseAuthorization();
-        app.UseAuthorization();
+     
         app.MapGet("/", () => "Hello World!");
 
         app.MapControllers();

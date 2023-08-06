@@ -1,0 +1,14 @@
+﻿C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\Controllers\AccountStatementController.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\Controllers\ApiControllerBase.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\Controllers\AuthController.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\Infrastructure\ApiExceptionFilter.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\Program.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\Services\CurrentUser.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\obj\Debug\net6.0\Naggaro.AccountStatment.WebApi.GlobalUsings.g.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\obj\Debug\net6.0\Naggaro.AccountStatment.WebApi.AssemblyInfo.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\appsettings.Development.json
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\appsettings.json
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\accountsdb.accdb
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\accountsdb.laccdb
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.WebApi\Properties\launchSettings.json

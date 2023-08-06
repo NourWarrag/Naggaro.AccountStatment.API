@@ -1,0 +1,10 @@
+﻿C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\Data\ApplicationDbContext.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\Data\ApplicationDbContextInitialiser.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\Data\Configurations\AccountConfigurations.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\Data\Configurations\AccountStatementConfigurations.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\Identity\ApplicationUser.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\Identity\IdentityService.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\Migrations\20230805200757_Init.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\Migrations\20230805200757_Init.Designer.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\Migrations\ApplicationDbContextModelSnapshot.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Infrastructure\RegisterInfrastructure.cs

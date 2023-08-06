@@ -85,7 +85,7 @@ public class ApplicationDbContextInitialiser
 
         if (_userManager.Users.Where(u => u.UserName == administrator.UserName).FirstOrDefault() == null)
         {
-            var re = await _userManager.CreateAsync(administrator, "admin");
+             await _userManager.CreateAsync(administrator, "admin");
 
             if (!string.IsNullOrWhiteSpace(administratorRole.Name))
             {

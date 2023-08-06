@@ -1,0 +1,3 @@
+﻿C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Domain\Constants\Roles.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Domain\Entities\Account.cs
+C:\Users\NourSeedahmed\source\repos\Naggaro.AccountStatment.API\Naggaro.AccountStatment.Domain\Entities\AccountStatement.cs
