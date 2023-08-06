@@ -13,4 +13,11 @@ public class AuthController : ApiControllerBase
         await Mediator.Send(authenticationRequest);
         return Ok();
     }
+
+    [HttpPost("Logout")]
+    public async Task<IActionResult> Logout([FromBody] LogoutRequest logoutRequest)
+    {
+        await Mediator.Send(logoutRequest);
+        return Ok();
+    }
 }

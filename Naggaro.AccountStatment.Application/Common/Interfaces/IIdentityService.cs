@@ -7,4 +7,6 @@ public interface IIdentityService
     Task<bool> IsInRoleAsync(string userId, string role);
 
     Task<bool> SignInAsync(string userName, string password);
+
+    Task SignOutAsync();
 }

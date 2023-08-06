@@ -38,6 +38,10 @@ public class IdentityService : IIdentityService
         return result.Succeeded;
 
     }
+    public async Task SignOutAsync()
+    {  
+        await _signInManager.SignOutAsync();
+    }
 
     public async Task<bool> IsInRoleAsync(string userId, string role)
     {
