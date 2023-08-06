@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,8 +12,10 @@ public static class RegisterInfrastructure
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseJet( "accountsdb.accdb",
-                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                options.UseJetOleDb("accountsdb.accdb",
+                    b =>
+                    b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))
+                );
 
         services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
 
@@ -35,18 +36,28 @@ public static class RegisterInfrastructure
             options.Cookie.HttpOnly = false;
             options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
             options.LoginPath = "/api/auth/Login";
-            // ReturnUrlParameter requires 
-            //using Microsoft.AspNetCore.Authentication.Cookies;
-            options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+            options.Events.OnRedirectToLogin = (ctx) =>
+            {
+                if (ctx.Request.Path.StartsWithSegments("/api") && ctx.Response.StatusCode == 200)
+                    ctx.Response.StatusCode = 401;
+                else
+                    ctx.Response.Redirect(ctx.RedirectUri);
+                return Task.CompletedTask;
+            };
+
             options.SlidingExpiration = true;
         });
         services.AddTransient<IIdentityService, IdentityService>();
 
         services.AddScoped<ApplicationDbContextInitialiser>();
 
-       
 
-         
+        services.AddAuthorization(options =>
+        {
+            options.FallbackPolicy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+        });
         return services;
     }
 }

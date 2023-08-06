@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="EntityFrameworkCore.Jet" Version="7.0.2" />
+    <PackageReference Include="EntityFrameworkCore.Jet.OleDb" Version="7.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.20">
       <PrivateAssets>all</PrivateAssets>
@@ -15,8 +17,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
 	<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
-	<PackageReference Include="System.Data.Odbc" Version="7.0.0" />
-	<PackageReference Include="System.Data.OleDb" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>

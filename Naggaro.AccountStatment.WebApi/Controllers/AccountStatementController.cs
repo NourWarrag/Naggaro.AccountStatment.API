@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 using Naggaro.AccountStatment.Application.AccountStatement;
-using Naggaro.AccountStatment.Application.Common.Security;
 
 namespace Naggaro.AccountStatment.WebApi.Controllers;
 
-[Authorize]
-public class AccountStatementConntroller: ApiControllerBase
+public class AccountStatementController : ApiControllerBase
 {
 
     [HttpGet]

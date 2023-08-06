@@ -10,12 +10,12 @@ public static class RegisterApplication
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         var assemply = typeof(RegisterApplication).Assembly;
-        services.AddMediatR(config => {
+        services.AddMediatR(config =>
+        {
             config.RegisterServicesFromAssembly(assemply);
-            config.AddBehavior(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehaviour<,>));
+            config.AddOpenRequestPreProcessor(typeof(LoggingBehaviour<>));
             config.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-          //  config.AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
-        })  ;
+        });
 
         services.AddValidatorsFromAssembly(assemply);
 
@@ -23,5 +23,5 @@ public static class RegisterApplication
     }
 
 
- }
+}
 

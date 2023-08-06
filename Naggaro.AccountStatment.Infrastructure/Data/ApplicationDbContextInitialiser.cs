@@ -1,16 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Bogus;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Naggaro.AccountStatment.Domain.Constants;
 using Naggaro.AccountStatment.Infrastructure.Identity;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Naggaro.AccountStatment.Infrastructure.Data;
 
@@ -75,7 +71,7 @@ public class ApplicationDbContextInitialiser
         var administratorRole = new IdentityRole(Roles.Admin);
         var userRole = new IdentityRole(Roles.User);
 
-        if ((await _roleManager.Roles.Where(r => r.Name == administratorRole.Name).FirstOrDefaultAsync())== null)
+        if ((await _roleManager.Roles.Where(r => r.Name == administratorRole.Name).FirstOrDefaultAsync()) == null)
         {
             await _roleManager.CreateAsync(administratorRole);
         }
@@ -83,18 +79,18 @@ public class ApplicationDbContextInitialiser
         {
             await _roleManager.CreateAsync(userRole);
         }
-  
+
         // Default users
         var administrator = new ApplicationUser { UserName = "admin", Email = "admin@localhost" };
 
         if (_userManager.Users.Where(u => u.UserName == administrator.UserName).FirstOrDefault() == null)
         {
-            var re=   await _userManager.CreateAsync(administrator, "admin");
-            
+            var re = await _userManager.CreateAsync(administrator, "admin");
+
             if (!string.IsNullOrWhiteSpace(administratorRole.Name))
             {
                 await _userManager.AddToRolesAsync(administrator, new[] { administratorRole.Name });
-                
+
             }
         }
         var user = new ApplicationUser { UserName = "user", Email = "user@localhost" };
@@ -102,30 +98,38 @@ public class ApplicationDbContextInitialiser
         if ((await _userManager.Users.Where(u => u.UserName == user.UserName).FirstOrDefaultAsync()) == null)
         {
             await _userManager.CreateAsync(user, "user");
-            
+
             if (!string.IsNullOrWhiteSpace(userRole.Name))
             {
                 await _userManager.AddToRolesAsync(user, new[] { userRole.Name });
-               
+
             }
         }
 
         // Default data
         // Seed, if necessary
-        //if (!_context.Accounts.Any())
-        //{
-        //    _context.Accounts.Add(new Domain.Entities.Account
-        //    {
-        //        AccountType = "",
-        //        AccountNumber = " ",
-        //        AccountStatments =
-        //        {
-        //            new Domain.Entities.AccountStatement { Amount =1233 },
 
-        //        }
-        //    }) ;
+        if (_context.Accounts.Count() == 0)
+        {
+            Randomizer.Seed = new Random(8675309);
+            var faker = new Faker();
+            for (int i = 1; i <= 5; i++)
+            {
+                _context.Accounts.Add(new Domain.Entities.Account
+                {
+                    AccountNumber = faker.Finance.Account(),
+                    AccountType = faker.Finance.AccountName(),
+                    AccountStatments = Enumerable.Range(1, 300).Select(i =>
+                    new Domain.Entities.AccountStatement
+                    {
+                        Amount = faker.Finance.Amount(1,5000),
+                        DateField = faker.Date.Between(DateTime.Now,DateTime.Now.AddMonths(-3))
+                    }).ToList()
+                });
+            }
 
-        //    await _context.SaveChangesAsync();
-        //}
+
+            await _context.SaveChangesAsync();
+        }
     }
 }

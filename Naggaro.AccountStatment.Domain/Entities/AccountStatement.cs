@@ -9,6 +9,6 @@ public class AccountStatement
 {
     public int ID { get; set; }
     public int AccountID { get; set; }
-    public string DateField { get; set; }
+    public DateTime DateField { get; set; }
     public decimal Amount { get; set; }
 }
